@@ -1,6 +1,7 @@
 const handleCategory=async()=>{
     const response=await fetch('https://openapi.programming-hero.com/api/news/categories');
     const data =await response.json();
+    console.log(data.data.news_category.slice(0,5))
      console.log(data.data.news_category.slice(0,3));
     const tabContainer=document.getElementById("tab-container");
     data.data.news_category.slice(0,3).forEach(category=>{
@@ -49,3 +50,4 @@ const handleLoadNews=async(categoryId)=>{
    
 }
 handleCategory();
+handleLoadNews("01");
